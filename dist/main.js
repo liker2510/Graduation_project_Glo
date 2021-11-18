@@ -1,1 +1,1 @@
-(()=>{"use strict";console.log("hello world")})();
+(()=>{"use strict";(()=>{const e=document.querySelector(".header-contacts__arrow"),t=document.getElementById("scrollPhone"),c=document.querySelector(".header-contacts__arrow");e.addEventListener("click",(()=>{c.classList.toggle("header-contacts__arrow__active"),t.classList.toggle("header-contacts__phone-number-accord")}))})()})();

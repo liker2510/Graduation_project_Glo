@@ -1,3 +1,3 @@
-import one from "./modules/one";
+import one from "./modules/header";
 
 one();
