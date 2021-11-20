@@ -5,7 +5,6 @@ const popup = () => {
     const popupPrivacy = document.querySelector('.popup-privacy');
     const linkPrivacy = document.querySelectorAll('.link-privacy');
     
-    console.log(linkPrivacy);
     linkPrivacy.forEach((index) => {
         index.addEventListener('click', () => {
             popupPrivacy.style = 'visibility: inherit;';
