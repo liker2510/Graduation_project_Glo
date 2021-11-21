@@ -22,6 +22,8 @@ const popup = () => {
     
     formulaItemIcon.forEach((index) => {
         index.addEventListener('mouseover', () => {
+
+            index.classList.add('active-item');
             animate({
                 duration: 300,
                 timing(timeFraction) {
@@ -31,23 +33,10 @@ const popup = () => {
                     index.firstElementChild.style.opacity = progress;
                 }
             });
-            if (index.innerText === '01') {
-                index.firstElementChild.style = "visibility: inherit; ";
-            } else if (index.innerText === '02') {
-                index.firstElementChild.style = "visibility: inherit;";
-            } else if (index.innerText === '03') {
-                index.firstElementChild.style = "visibility: inherit;";
-            } else if (index.innerText === '04') {
-                index.firstElementChild.style = "visibility: inherit;";
-            } else if (index.innerText === '05') {
-                index.firstElementChild.style = "visibility: inherit;";
-            } else if (index.innerText === '06') {
-                index.firstElementChild.style = "visibility: inherit;";
-            }
         })
 
         index.addEventListener('mouseout', () => {
-            index.firstElementChild.style = "";
+            index.classList.remove('active-item');
         })
     })
     

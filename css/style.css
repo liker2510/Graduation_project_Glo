@@ -8962,3 +8962,7 @@ strong {
 .slider-dots {
     display: none;
 }
+
+.dnone {
+    display: none;
+}
