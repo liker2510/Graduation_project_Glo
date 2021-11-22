@@ -2423,6 +2423,9 @@ div.wave-block:nth-child(17):after {
     .transparency-slider.row {
         display: block;
     }
+    .transparency-item {
+        display: none !important;
+    }
 }
 
 .transparency-slider-wrap {
@@ -4696,7 +4699,7 @@ div.wave-block:nth-child(17):after {
     display: flex;
     visibility: hidden;
     top: 0;
-    /* left: 0; */
+    left: 0;
     width: 100%;
     height: 100%;
     padding-left: 10px;
@@ -8965,4 +8968,14 @@ strong {
 
 .dnone {
     display: none;
+}
+.transparency-item-active {
+    display: flex !important;
+}
+
+.popup-transparency-slider__slide {
+    display: none;
+}
+.popup-transparency-slider__slide-active {
+    display: block !important;
 }
