@@ -5,7 +5,7 @@ const sendForm = ({ formId, someElem = [] }) => {
 
     const sendData = (data) => {
         return fetch('/Graduation_project_Glo/server.php', {
-            method: 'POST',
+            method: 'GET',
             body: JSON.stringify(data),
             headers: {
                 "Content-Type": "application/json"
