@@ -1,11 +1,14 @@
 const sendForm = ({ formId, someElem = [] }) => {
     const form = document.getElementById(formId);
     const popupThank = document.querySelector('.popup-thank');
-
+    const getSheckbox = form.querySelector('input[type="checkbox"]');
+    const statusBlock = document.createElement('div');
+    const errorText = 'Заполните все поля!';
+    statusBlock.style = "color: black;"
 
     const sendData = (data) => {
-        return fetch('/Graduation_project_Glo/server.php', {
-            method: 'GET',
+        return fetch('https://jsonplaceholder.typicode.com/posts', {
+            method: 'POST',
             body: JSON.stringify(data),
             headers: {
                 "Content-Type": "application/json"
@@ -24,6 +27,7 @@ const sendForm = ({ formId, someElem = [] }) => {
             formBody[key] = val;
         })
         console.log('submit');
+        console.log();
 
      sendData(formBody) 
         .then(data => {
@@ -52,8 +56,14 @@ const sendForm = ({ formId, someElem = [] }) => {
         }
         form.addEventListener('submit', (e) => {
             e.preventDefault();
-        
-            submitForm();
+            if (getSheckbox.checked === true) {
+                statusBlock.textContent = "";
+                submitForm();
+            } else {
+                statusBlock.textContent = errorText;
+                form.append(statusBlock);
+            }
+ 
         })
     } catch(error) {
         console.log(error.message);
