@@ -8979,3 +8979,15 @@ strong {
 .popup-transparency-slider__slide-active {
     display: block !important;
 }
+.popup_docs_slider {
+    display: none;
+}
+.popup_docs_slider-active {
+    display: block;
+}
+.reviews_slider {
+    display: none;
+}
+.reviews_slider-active {
+    display: flex;
+}

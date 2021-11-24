@@ -4,20 +4,22 @@ const transparencySlider = () => {
     const popupTransparency = document.querySelector('.popup-transparency');
     const transparencyItemImg = document.querySelectorAll('.transparency-item__img');
     const popupTransparencySliderSlide = document.querySelectorAll('.popup-transparency-slider__slide');
+    // const popupTransparencySliderWrap = document.querySelector('.popup-transparency-slider-wrap');
+    // const popupDocsSlider = document.querySelectorAll('.popup_docs_slider');
 
     let currentSlide = 0;
 
     const prevSlide = (elems, index, strClass) => {
         elems[index].classList.remove(strClass);
-        }
-    
+    }
+
     const nextSlide = (elems, index, strClass) => {
         elems[index].classList.add(strClass);
     }
 
     transparencySlider.addEventListener('click', (e) => {
         if (!e.target.matches('.slider-arrow_right, .slider-arrow_left, .transparency-item__img, svg, path')) {
-             return
+            return
         }
         if (e.target.matches('.transparency-item__img')) {
             popupTransparency.style = 'visibility: visible;'
@@ -34,7 +36,7 @@ const transparencySlider = () => {
         prevSlide(transparencyItem, currentSlide, 'transparency-item-active')
         if (e.target.matches('.slider-arrow_right, svg, path')) {
             currentSlide++
-        }else if (e.target.matches('.slider-arrow_left, svg, path')) {
+        } else if (e.target.matches('.slider-arrow_left, svg, path')) {
             currentSlide--
         }
         if (currentSlide >= transparencyItem.length) {
@@ -46,7 +48,7 @@ const transparencySlider = () => {
         nextSlide(transparencyItem, currentSlide, 'transparency-item-active');
     })
 
-    popupTransparency.addEventListener('click',(e) => {
+    popupTransparency.addEventListener('click', (e) => {
         e.preventDefault()
         if (e.target.matches('.close')) {
             popupTransparency.style = ''
@@ -55,6 +57,7 @@ const transparencySlider = () => {
             })
         }
     })
+
 }
 
- export default transparencySlider
+export default transparencySlider
